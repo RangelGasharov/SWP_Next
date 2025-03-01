@@ -1,0 +1,10 @@
+.main-container {
+    display: grid;
+    gap: .5rem;
+    padding: 1rem;
+    background-color: rgb(238, 255, 253);
+}
+
+.main-container>h2 {
+    font-size: 1.3rem;
+}
