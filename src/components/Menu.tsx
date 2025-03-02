@@ -8,9 +8,9 @@ export default function Menu({ }: Props) {
     return (
         <div>
             <ul className={styles["list-box"]}>
-                <li className={styles["list-element"]}><Link href="/">Home</Link></li>
-                <li className={styles["list-element"]}><Link href="/cars">Cars</Link></li>
-                <li className={styles["list-element"]}><Link href="/trucks">Trucks</Link></li>
+                <li><Link className={styles["list-element"]} href="/">Home</Link></li>
+                <li><Link className={styles["list-element"]} href="/cars">Cars</Link></li>
+                <li><Link className={styles["list-element"]} href="/trucks">Trucks</Link></li>
             </ul>
         </div>
     )

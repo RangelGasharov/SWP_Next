@@ -1,6 +1,7 @@
 export interface Car {
+    id: number;
     name: string;
     type: string;
     color: string;
-    motor: Engine;
+    engine_fk: number;
 }

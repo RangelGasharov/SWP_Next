@@ -9,10 +9,7 @@
 .list-element {
     cursor: pointer;
     float: left;
-}
-
-.list-element>a {
-    padding: 3rem;
+    padding: 1rem;
 }
 
 .list-element:hover {
