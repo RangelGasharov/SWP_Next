@@ -2,6 +2,7 @@ import CardsContainer from '@/components/CardsContainer'
 import { Car } from '@/services/Car';
 import { Engine } from '@/services/Engine';
 import React from 'react'
+import styles from "./cars-page.module.css"
 
 type Props = {}
 
@@ -21,7 +22,7 @@ export default async function CarsPage({ }: Props) {
     const cars: Car[] = await getCars();
     const engines: Engine[] = await getEngines();
     return (
-        <div>
+        <div className={styles["main-container"]}>
             <h2>Cars</h2>
             <CardsContainer cars={cars} engines={engines} />
         </div>
