@@ -11,6 +11,7 @@ export default function Menu({ }: Props) {
                 <li><Link className={styles["list-element"]} href="/">Home</Link></li>
                 <li><Link className={styles["list-element"]} href="/cars">Cars</Link></li>
                 <li><Link className={styles["list-element"]} href="/trucks">Trucks</Link></li>
+                <li><Link className={styles["list-element"]} href="/people">People</Link></li>
             </ul>
         </div>
     )

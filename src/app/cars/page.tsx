@@ -7,13 +7,13 @@ import styles from "./cars-page.module.css"
 type Props = {}
 
 const getCars = async () => {
-    const res = await fetch('http://localhost:3000/api/cars');
+    const res = await fetch('http://localhost:3000/api/car');
     if (!res.ok) throw new Error('Fehler beim Laden der Daten');
     return res.json();
 }
 
 const getEngines = async () => {
-    const res = await fetch('http://localhost:3000/api/engines');
+    const res = await fetch('http://localhost:3000/api/engine');
     if (!res.ok) throw new Error('Fehler beim Laden der Daten');
     return res.json();
 }
