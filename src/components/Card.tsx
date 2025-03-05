@@ -1,5 +1,6 @@
+"use client"
 import { Car } from '@/services/Car'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./Card.module.css"
 import { Engine } from '@/services/Engine'
 import EngineCard from './EngineCard'
@@ -10,8 +11,10 @@ type Props = {
 }
 
 export default function Card({ car, engine }: Props) {
+    const [isActive, setIsActive] = useState(false);
+
     return (
-        <div className={styles["main-container"]}>
+        <div onClick={() => { setIsActive(!isActive) }} className={styles["main-container"]} style={{ backgroundColor: `${isActive ? "#8be26f" : "#ff5733"}` }}>
             <h2>{car.name}</h2>
             <div className={styles["info-container"]}>
                 <div>Color: </div>
