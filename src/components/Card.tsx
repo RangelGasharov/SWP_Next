@@ -4,13 +4,15 @@ import React, { useState } from 'react'
 import styles from "./Card.module.css"
 import { Engine } from '@/services/Engine'
 import EngineCard from './EngineCard'
+import { CarType } from '@/services/CarType'
 
 type Props = {
     car: Car
-    engine: Engine
+    engine: Engine,
+    carType: CarType
 }
 
-export default function Card({ car, engine }: Props) {
+export default function Card({ car, engine, carType }: Props) {
     const [isActive, setIsActive] = useState(false);
 
     return (
@@ -20,7 +22,7 @@ export default function Card({ car, engine }: Props) {
                 <div>Color: </div>
                 <div>{car.color}</div>
                 <div>Type: </div>
-                <div>{car.type}</div>
+                <div>{carType.type_name}</div>
             </div>
             <EngineCard engine={engine} />
         </div>
