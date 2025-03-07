@@ -1,5 +1,6 @@
 import { Person } from '@/services/Person'
-import React from 'react'
+import React from 'react';
+import styles from "./PersonCard.module.css";
 
 type Props = {
     person: Person;
@@ -7,7 +8,7 @@ type Props = {
 
 export default function PersonCard({ person }: Props) {
     return (
-        <div>
+        <div className={styles["main-container"]}>
             <div>{person.firstname}</div>
             <div>{person.lastname}</div>
         </div>

@@ -2,6 +2,7 @@
 import { Person } from '@/services/Person';
 import React, { useEffect, useState } from 'react'
 import PersonCard from './PersonCard';
+import styles from "./PeopleContainer.module.css";
 
 type Props = {}
 
@@ -21,7 +22,7 @@ export default function PeopleContainer({ }: Props) {
     }, [])
 
     return (
-        <div>
+        <div className={styles["main-container"]}>
             {isLoading && <div>Loading ...</div>}
             {people.map((person: Person) => {
                 return (
