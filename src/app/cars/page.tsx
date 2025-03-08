@@ -4,6 +4,7 @@ import { Engine } from '@/services/Engine';
 import React from 'react'
 import styles from "./cars-page.module.css"
 import { CarType } from '@/services/CarType';
+import CarForm from '@/components/CarForm';
 
 type Props = {}
 
@@ -29,9 +30,11 @@ export default async function CarsPage({ }: Props) {
     const cars: Car[] = await getCars();
     const engines: Engine[] = await getEngines();
     const carTypes: CarType[] = await getCarTypes();
+
     return (
         <div className={styles["main-container"]}>
             <h2>Cars</h2>
+            <CarForm />
             <CardsContainer cars={cars} engines={engines} carTypes={carTypes} />
         </div>
     )

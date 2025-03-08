@@ -16,9 +16,9 @@ export default function PeopleContainer({ }: Props) {
             if (!res.ok) throw new Error('Fehler beim Laden der Daten');
             const people = await res.json();
             setPeople(people);
+            setIsLoading(false);
         }
         getPeople();
-        setIsLoading(false);
     }, [])
 
     return (
