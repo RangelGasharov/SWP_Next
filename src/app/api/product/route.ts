@@ -1,3 +1,4 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import mysql from 'mysql2/promise';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -12,17 +13,17 @@ const db = mysql.createPool({
 
 export async function POST(req: NextRequest) {
     try {
-        const { username, password } = await req.json();
+        const { productname } = await req.json();
 
-        const query = `SELECT * FROM users WHERE user_name = '${username}' AND user_password = '${password}'`;
+        const query = `SELECT * FROM products WHERE product_name LIKE '%${productname}%'`;
         console.log(query);
 
-        const [rows] = await db.query(query, [username, password]);
+        const [rows] = await db.query(query);
 
         if (rows.length > 0) {
-            return NextResponse.json({ success: true, message: 'Login erfolgreich!' });
+            return NextResponse.json({ success: true, message: `Ergebnisse zum "${productname}"`, data: rows });
         } else {
-            return NextResponse.json({ success: false, message: 'Falsche Anmeldedaten!' }, { status: 401 });
+            return NextResponse.json({ success: false, message: 'Es konnten keine Ergebnis geunden werden!', data: [] }, { status: 401 });
         }
     } catch (error) {
         console.error(error);
