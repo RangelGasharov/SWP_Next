@@ -13,7 +13,7 @@ const db = mysql.createPool({
 export async function GET(request: NextResponse, { params }: { params: Promise<{ id: string }> }) {
     const id = (await params).id;
     try {
-        const [rows] = await db.query(`SELECT * FROM person WHERE id=${id}`);
+        const [rows] = await db.query(`SELECT * FROM person WHERE id=?`, [id]);
         return NextResponse.json(rows, { status: 200 });
     } catch (error) {
         return NextResponse.json({ message: 'Fehler beim Abrufen der Daten', error }, { status: 500 });
