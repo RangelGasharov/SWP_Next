@@ -1,0 +1,11 @@
+.main-container {
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.inputs-container {
+    display: grid;
+    gap: 1rem;
+    width: fit-content;
+}
