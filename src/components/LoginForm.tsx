@@ -37,7 +37,7 @@ export default function LoginForm({ }: Props) {
             <div className={styles["inputs-container"]}>
                 <TextField label='Username' value={username} onChange={(e) => { setUsername(e.target.value) }}></TextField>
                 <TextField label='Password' value={password} onChange={(e) => { setPassword(e.target.value) }}></TextField>
-                <Button variant='contained' onClick={handleSubmit}>Login</Button>
+                <Button variant='contained' onClick={handleSubmit}>Log In</Button>
             </div>
             <div>{query}</div>
             <div>{response && <p>{response}</p>}</div>

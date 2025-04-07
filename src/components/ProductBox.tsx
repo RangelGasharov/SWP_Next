@@ -9,6 +9,7 @@ type Props = {
 export const ProductBox = ({ product }: Props) => {
     return (
         <div className={styles["main-container"]} key={product.id}>
+            <div>{product.id}</div>
             <div>{product.product_name}</div>
             <div>{product.product_price}</div>
             <div>{product.quantity_in_stock}</div>
